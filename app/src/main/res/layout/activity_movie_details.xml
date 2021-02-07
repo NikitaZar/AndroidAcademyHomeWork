@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView
+    android:id="@+id/scroll_movie_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_movie_details"
@@ -11,11 +19,6 @@
     tools:context=".MovieDetailsActivity">
 
 
-    <ScrollView
-        android:id="@+id/scroll_movie_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
 
         <ImageView
             android:id="@+id/origin_pic"
@@ -49,7 +52,7 @@
             app:layout_constraintGuide_begin="362dp" />
 
         <TextView
-            android:id="@+id/back"
+            android:id="@+id/activity_movie_details_back_button"
             android:layout_width="42dp"
             android:layout_height="16dp"
             android:layout_marginStart="18dp"
@@ -66,7 +69,7 @@
             android:layout_height="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="226dp"
-            android:text="@string/_13pus"
+            android:text="@string/_13plus"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="12sp"
@@ -300,6 +303,8 @@
             app:layout_constraintEnd_toEndOf="@id/chris_hemsworth_pic"
             app:layout_constraintStart_toStartOf="@id/chris_hemsworth_pic"
             app:layout_constraintTop_toBottomOf="@+id/chris_hemsworth_pic" />
-    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -10,5 +10,6 @@
     <color name="text_gray">#6D6D80</color>
     <color name="background">#191926</color>
     <color name="red_text">#FF3466</color>
+    <color name="age_gray">#191926</color>
 
 </resources>
