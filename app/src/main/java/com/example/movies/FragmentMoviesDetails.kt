@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 
 class FragmentMoviesDetails: Fragment(){
 
-    private var listener: FragmentMoviesList.TransactionsFragmentClicks? = null
     var fragmentId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +29,6 @@ class FragmentMoviesDetails: Fragment(){
     ): View? = inflater.inflate(R.layout.fragment_movies_details, container, false)
 
 
-    fun setClickListener(l: FragmentMoviesList.TransactionsFragmentClicks?) {
-        listener = l
-    }
 
     companion object {
         private const val PARAM_ID = "fragment_MovieDetails"
