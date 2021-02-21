@@ -46,17 +46,17 @@
             android:layout_height="296dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movies_list"
+            app:layout_constraintBottom_toTopOf="@id/third_movie"
             app:layout_constraintEnd_toStartOf="@id/second_movie"
-            app:layout_constraintBottom_toTopOf="@id/third_movie">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movies_list">
 
 
             <TextView
                 android:id="@+id/first_movie_border"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_coner_border"
+                android:background="@drawable/rounded_corner_border"
                 android:gravity="bottom"
                 android:paddingStart="8dp"
                 android:paddingBottom="8dp"
@@ -86,7 +86,7 @@
                 android:layout_width="166dp"
                 android:layout_height="246dp"
                 android:layout_margin="1.5dp"
-                android:background="@drawable/rounded_coner_transparent"
+                android:background="@drawable/rounded_corner_transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/movie_"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +98,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/rounded_coner"
+                android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/age_gray"
                 android:gravity="center"
                 android:text="@string/_13plus"
@@ -176,8 +176,8 @@
                 android:layout_marginStart="62dp"
                 android:layout_marginTop="228dp"
                 android:text="@string/_125_reviews"
-                android:textColor="@color/text_gray"
                 android:textAllCaps="true"
+                android:textColor="@color/text_gray"
                 android:textSize="8sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,17 +205,17 @@
             android:layout_height="296dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toTopOf="@id/forth_movie"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movies_list"
             app:layout_constraintStart_toEndOf="@id/first_movie"
-            app:layout_constraintBottom_toTopOf="@id/forth_movie">
+            app:layout_constraintTop_toBottomOf="@id/movies_list">
 
 
             <TextView
                 android:id="@+id/second_movie_border"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_coner_border"
+                android:background="@drawable/rounded_corner_border"
                 android:gravity="bottom"
                 android:paddingStart="8dp"
                 android:paddingBottom="8dp"
@@ -245,7 +245,7 @@
                 android:layout_width="166dp"
                 android:layout_height="246dp"
                 android:layout_margin="1.5dp"
-                android:background="@drawable/rounded_coner_transparent"
+                android:background="@drawable/rounded_corner_transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/movie_2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -257,7 +257,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/rounded_coner"
+                android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/age_gray"
                 android:gravity="center"
                 android:text="@string/_16plus"
@@ -363,18 +363,18 @@
             android:id="@+id/third_movie"
             android:layout_width="170dp"
             android:layout_height="296dp"
-            android:layout_marginTop="331dp"
             android:layout_marginStart="14dp"
+            android:layout_marginTop="331dp"
+            app:layout_constraintEnd_toStartOf="@id/forth_movie"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movies_list"
-            app:layout_constraintEnd_toStartOf="@id/forth_movie">
+            app:layout_constraintTop_toBottomOf="@id/movies_list">
 
 
             <TextView
                 android:id="@+id/third_movie_border"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_coner_border"
+                android:background="@drawable/rounded_corner_border"
                 android:gravity="bottom"
                 android:paddingStart="8dp"
                 android:paddingBottom="8dp"
@@ -394,8 +394,8 @@
                 android:paddingStart="8dp"
                 android:paddingBottom="20dp"
                 android:text="@string/black_window"
-                android:textStyle="bold"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -405,7 +405,7 @@
                 android:layout_width="166dp"
                 android:layout_height="246dp"
                 android:layout_margin="1.5dp"
-                android:background="@drawable/rounded_coner_transparent"
+                android:background="@drawable/rounded_corner_transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/movie_3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -417,7 +417,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/rounded_coner"
+                android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/age_gray"
                 android:gravity="center"
                 android:text="@string/_13plus"
@@ -525,16 +525,15 @@
             android:layout_marginTop="331dp"
             android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movies_list"
             app:layout_constraintStart_toEndOf="@id/third_movie"
-            >
+            app:layout_constraintTop_toBottomOf="@id/movies_list">
 
 
             <TextView
                 android:id="@+id/forth_movie_border"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/rounded_coner_border"
+                android:background="@drawable/rounded_corner_border"
                 android:gravity="bottom"
                 android:paddingStart="8dp"
                 android:paddingBottom="8dp"
@@ -564,7 +563,7 @@
                 android:layout_width="166dp"
                 android:layout_height="246dp"
                 android:layout_margin="1.5dp"
-                android:background="@drawable/rounded_coner_transparent"
+                android:background="@drawable/rounded_corner_transparent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/movie_4"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -576,7 +575,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/rounded_coner"
+                android:background="@drawable/rounded_corner"
                 android:backgroundTint="@color/age_gray"
                 android:gravity="center"
                 android:text="@string/_13plus"
@@ -674,7 +673,6 @@
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
