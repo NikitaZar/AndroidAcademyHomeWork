@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/space7x"
             android:text="@string/storyline"
-            android:theme="@style/text_14sp_white"
+            android:theme="@style/text_14sp_white_bold"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/action_adventure_fantasy" />
