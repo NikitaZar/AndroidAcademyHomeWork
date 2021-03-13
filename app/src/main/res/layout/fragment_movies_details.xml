@@ -95,14 +95,13 @@
             android:id="@+id/action_adventure_fantasy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingEnd="@dimen/space4x"
             android:text="@string/action_adventure_fantasy"
             android:theme="@style/text_14sp_red"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/guideline1" />
 
-        <RatingBar
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:id="@+id/ratingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
@@ -110,8 +109,8 @@
             android:rating="4"
             android:theme="@style/RatingBar"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/_125_reviews"
-            app:layout_constraintStart_toStartOf="@id/guideline_left" />
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toTopOf="@id/_125_reviews" />
 
         <TextView
             android:id="@+id/_125_reviews"
@@ -120,9 +119,7 @@
             android:paddingStart="@dimen/space4x"
             android:paddingEnd="@dimen/space4x"
             android:text="@string/_125_reviews"
-            android:textAllCaps="true"
-            android:textColor="@color/text_gray"
-            android:theme="@style/text_14sp_gray_bold"
+            android:theme="@style/text_14sp_gray_bold_uppercase"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
             app:layout_constraintStart_toEndOf="@+id/ratingBar" />
 
@@ -153,7 +150,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space6x"
-            android:text="Cast"
+            android:text="@string/Cast"
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/story" />
@@ -211,7 +208,6 @@
             android:id="@+id/chris_evans_pic_text"
             android:layout_width="@dimen/actorsTextWidth"
             android:layout_height="@dimen/space8x"
-            android:inputType="textMultiLine"
             android:text="@string/chris_evans_text"
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintEnd_toEndOf="@id/chris_evans_pic"
@@ -222,7 +218,6 @@
             android:id="@+id/mark_ruffalo_text"
             android:layout_width="@dimen/actorsTextWidth"
             android:layout_height="@dimen/space8x"
-            android:inputType="textMultiLine"
             android:text="@string/mark_ruffalo_text"
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintEnd_toEndOf="@id/mark_ruffalo_pic"
@@ -233,16 +228,13 @@
             android:id="@+id/cris_hemsworth_text"
             android:layout_width="@dimen/actorsTextWidth"
             android:layout_height="@dimen/space8x"
-            android:inputType="textMultiLine"
             android:text="@string/chris_hemsworth_text"
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintEnd_toEndOf="@id/chris_hemsworth_pic"
             app:layout_constraintStart_toStartOf="@id/chris_hemsworth_pic"
             app:layout_constraintTop_toBottomOf="@+id/chris_hemsworth_pic" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
 
 

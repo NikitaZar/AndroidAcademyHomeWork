@@ -64,5 +64,10 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="text_14sp_gray_bold_uppercase" parent="text_14sp">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

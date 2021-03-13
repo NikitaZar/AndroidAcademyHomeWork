@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,14 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Movies">
-
-
         <ImageView
             android:id="@+id/sniper_target"
             android:layout_width="wrap_content"
@@ -25,7 +21,6 @@
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/movies_list"
             android:layout_width="wrap_content"
@@ -38,8 +33,6 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/sniper_target"
             app:layout_constraintTop_toTopOf="parent" />
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/first_movie"
             android:layout_width="170dp"
@@ -50,8 +43,6 @@
             app:layout_constraintEnd_toStartOf="@id/second_movie"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/movies_list">
-
-
             <TextView
                 android:id="@+id/first_movie_border"
                 android:layout_width="match_parent"
@@ -67,8 +58,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
             <TextView
                 android:id="@+id/first_movie_name"
                 android:layout_width="wrap_content"
@@ -79,8 +68,6 @@
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
-
             <ImageView
                 android:id="@+id/first_movie_pic"
                 android:layout_width="166dp"
@@ -92,7 +79,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/first_movie_age"
                 android:layout_width="24dp"
@@ -108,7 +94,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_like"
                 android:layout_width="16dp"
@@ -118,7 +103,6 @@
                 android:src="@drawable/ic_like_off"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_star"
                 android:layout_width="8dp"
@@ -128,7 +112,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_star2"
                 android:layout_width="8dp"
@@ -138,7 +121,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_star3"
                 android:layout_width="8dp"
@@ -148,7 +130,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_star4"
                 android:layout_width="8dp"
@@ -158,7 +139,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/first_movie_star5"
                 android:layout_width="12dp"
@@ -168,7 +148,6 @@
                 android:src="@drawable/ic_star_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/first_movie_reviews"
                 android:layout_width="wrap_content"
@@ -182,7 +161,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/first_movie_genre"
                 android:layout_width="wrap_content"
@@ -195,10 +173,7 @@
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/second_movie"
             android:layout_width="170dp"
@@ -209,8 +184,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/first_movie"
             app:layout_constraintTop_toBottomOf="@id/movies_list">
-
-
             <TextView
                 android:id="@+id/second_movie_border"
                 android:layout_width="match_parent"
@@ -226,8 +199,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
             <TextView
                 android:id="@+id/second_movie_name"
                 android:layout_width="wrap_content"
@@ -238,8 +209,6 @@
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
-
             <ImageView
                 android:id="@+id/second_pic"
                 android:layout_width="166dp"
@@ -251,7 +220,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/second_movie_age"
                 android:layout_width="24dp"
@@ -267,7 +235,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/second_movie_like"
                 android:layout_width="16dp"
@@ -277,7 +244,6 @@
                 android:src="@drawable/ic_like_on"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/second_movie_star"
                 android:layout_width="8dp"
@@ -287,7 +253,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/second_movie_star2"
                 android:layout_width="8dp"
@@ -297,7 +262,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/second_movie_star3"
                 android:layout_width="8dp"
@@ -307,8 +271,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            2
-
             <ImageView
                 android:id="@+id/second_movie_star4"
                 android:layout_width="8dp"
@@ -318,7 +280,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/second_movie_star5"
                 android:layout_width="12dp"
@@ -328,7 +289,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/second_movie_reviews"
                 android:layout_width="wrap_content"
@@ -342,7 +302,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/second_movie_genre"
                 android:layout_width="wrap_content"
@@ -355,10 +314,7 @@
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/third_movie"
             android:layout_width="170dp"
@@ -368,8 +324,6 @@
             app:layout_constraintEnd_toStartOf="@id/forth_movie"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/movies_list">
-
-
             <TextView
                 android:id="@+id/third_movie_border"
                 android:layout_width="match_parent"
@@ -385,8 +339,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
             <TextView
                 android:id="@+id/third_movie_name"
                 android:layout_width="wrap_content"
@@ -398,8 +350,6 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
-
             <ImageView
                 android:id="@+id/third_movie_pic"
                 android:layout_width="166dp"
@@ -411,7 +361,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/third_movie_age"
                 android:layout_width="24dp"
@@ -427,7 +376,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_like"
                 android:layout_width="16dp"
@@ -437,7 +385,6 @@
                 android:src="@drawable/ic_like_off"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_star"
                 android:layout_width="8dp"
@@ -447,7 +394,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_star2"
                 android:layout_width="8dp"
@@ -457,7 +403,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_star3"
                 android:layout_width="8dp"
@@ -467,7 +412,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_star4"
                 android:layout_width="8dp"
@@ -477,7 +421,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/third_movie_star5"
                 android:layout_width="12dp"
@@ -487,7 +430,6 @@
                 android:src="@drawable/ic_star_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/third_movie_reviews"
                 android:layout_width="wrap_content"
@@ -501,7 +443,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/third_movie_genre"
                 android:layout_width="wrap_content"
@@ -514,10 +455,7 @@
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/forth_movie"
             android:layout_width="170dp"
@@ -527,8 +465,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/third_movie"
             app:layout_constraintTop_toBottomOf="@id/movies_list">
-
-
             <TextView
                 android:id="@+id/forth_movie_border"
                 android:layout_width="match_parent"
@@ -544,8 +480,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
             <TextView
                 android:id="@+id/forth_movie_name"
                 android:layout_width="wrap_content"
@@ -556,8 +490,6 @@
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
-
             <ImageView
                 android:id="@+id/forth_movie_pic"
                 android:layout_width="166dp"
@@ -569,7 +501,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/forth_movie_age"
                 android:layout_width="24dp"
@@ -585,7 +516,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/forth_movie_like"
                 android:layout_width="16dp"
@@ -595,7 +525,6 @@
                 android:src="@drawable/ic_like_off"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/forth_movie_star"
                 android:layout_width="8dp"
@@ -605,7 +534,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/forth_movie_star2"
                 android:layout_width="8dp"
@@ -615,7 +543,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/forth_movie_star3"
                 android:layout_width="8dp"
@@ -625,8 +552,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            2
-
             <ImageView
                 android:id="@+id/forth_movie_star4"
                 android:layout_width="8dp"
@@ -636,7 +561,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/forth_movie_star5"
                 android:layout_width="12dp"
@@ -646,7 +570,6 @@
                 android:src="@drawable/ic_red_star"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/forth_movie_reviews"
                 android:layout_width="wrap_content"
@@ -660,7 +583,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/forth_movie_genre"
                 android:layout_width="wrap_content"
@@ -673,8 +595,6 @@
                 android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@id/toolbar"
+            android:id="@+id/toolbar_"
             android:layout_width="match_parent"
             android:layout_height="@dimen/space10x"
             android:layout_marginTop="@dimen/space10x"
@@ -55,10 +55,9 @@
             android:layout_marginStart="@dimen/space4x"
             android:layout_marginTop="@dimen/space4x"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar">
+            app:layout_constraintTop_toBottomOf="@id/toolbar_">
 
-
-            <TextView
+            <ImageView
                 android:id="@+id/first_movie_border"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -66,17 +65,6 @@
                 android:gravity="bottom"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/space2x"
-                android:paddingBottom="@dimen/space2x"
-                android:text="@string/_137_min"
-                android:textAllCaps="true"
-                android:theme="@style/text_8sp_gray"
-                app:layout_constraintBottom_toBottomOf="@id/first_movie_border"
-                app:layout_constraintStart_toStartOf="@id/first_movie_border" />
 
             <TextView
                 android:id="@+id/first_movie_name"
@@ -134,55 +122,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/first_movie_star"
-                android:layout_width="@dimen/space2x"
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/first_ratingBar"
+                android:layout_width="@dimen/space10x"
                 android:layout_height="@dimen/space2x"
                 android:layout_marginStart="@dimen/space2x"
                 android:layout_marginTop="230dp"
-                android:src="@drawable/ic_red_star"
+                android:rating="4"
+                android:theme="@style/RatingBar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/first_movie_star2"
-                android:layout_width="@dimen/space2x"
-                android:layout_height="@dimen/space2x"
-                android:layout_marginStart="@dimen/space4.5x"
-                android:layout_marginTop="230dp"
-                android:src="@drawable/ic_red_star"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/first_movie_star3"
-                android:layout_width="@dimen/space2x"
-                android:layout_height="@dimen/space2x"
-                android:layout_marginStart="@dimen/space7x"
-                android:layout_marginTop="230dp"
-                android:src="@drawable/ic_red_star"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/first_movie_star4"
-                android:layout_width="@dimen/space2x"
-                android:layout_height="@dimen/space2x"
-                android:layout_marginStart="@dimen/space9.5x"
-                android:layout_marginTop="230dp"
-                android:src="@drawable/ic_red_star"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/first_movie_star5"
-                android:layout_width="@dimen/space3x"
-                android:layout_height="@dimen/space2x"
-                android:layout_marginStart="@dimen/space12x"
-                android:layout_marginTop="230dp"
-                android:src="@drawable/ic_star_gray"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:mrb_fillBackgroundStars="true" />
 
             <TextView
                 android:id="@+id/first_movie_reviews"
@@ -192,10 +142,8 @@
                 android:layout_marginTop="228dp"
                 android:text="@string/_125_reviews"
                 android:textAllCaps="true"
-                android:textColor="@color/text_gray"
-                android:textSize="8sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/first_movie_star5"
+                android:theme="@style/text_8sp_gray"
+                app:layout_constraintStart_toEndOf="@id/first_ratingBar"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -209,7 +157,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/first_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space2x"
+                android:paddingBottom="@dimen/space2x"
+                android:text="@string/_137_min"
+                android:textAllCaps="true"
+                android:theme="@style/text_8sp_gray"
+                app:layout_constraintBottom_toBottomOf="@id/first_movie_border"
+                app:layout_constraintStart_toStartOf="@id/first_movie_border" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

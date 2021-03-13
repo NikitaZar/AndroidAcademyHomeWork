@@ -13,5 +13,5 @@
     <color name="age_gray">#191926</color>
     <color name="rating_red">#FF3365</color>
     <color name="rating_gray">#6D6D80</color>
-
+    <color name="transparent">#00000000</color>
 </resources>
