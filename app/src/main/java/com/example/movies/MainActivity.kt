@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.fragments_container, FragmentMoviesList())
                 .addToBackStack(null)
                 .commit()
-            Log.d(TAG, "add Root")
         }
     }
 
@@ -27,14 +26,7 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragments_container, FragmentMoviesDetails())
             .addToBackStack(null)
             .commit()
-        Log.d(TAG, "add Details")
     }
-
-    companion object {
-        private const val TAG = "Movie"
-        private const val FRAGMENT_INSTANCE_NAME = "detailsFragment"
-    }
-
 }
 
 
