@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="android:progressTint">@color/rating_red</item>
+        <item name="android:progressBackgroundTint">@color/rating_gray</item>
+    </style>
+
+    <style name="text_14sp">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_12sp">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_8sp">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="text_14sp_gray_bold" parent="text_14sp">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_14sp_white_bold" parent="text_14sp">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_14sp_white" parent="text_14sp">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_12sp_gray" parent="text_12sp">
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+
+    <style name="text_12sp_white" parent="text_12sp">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_header">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_14sp_red" parent="text_14sp">
+        <item name="android:textColor">@color/red_text</item>
+    </style>
+
+    <style name="text_8sp_gray" parent="text_8sp">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_8sp_red" parent="text_8sp">
+        <item name="android:textColor">@color/red_text</item>
+    </style>
+
+    <style name="text_12sp_white_bold_centred" parent="text_12sp_white">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="text_14sp_gray_bold_uppercase" parent="text_14sp">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

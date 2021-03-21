@@ -7,40 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 
-class FragmentMoviesDetails: Fragment(){
-
-    var fragmentId: Int = 0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-       /*
-        arguments?.let {
-            fragmentId = it.getString(PARAM_ID)
-        }
-
-        */
-    }
+class FragmentMoviesDetails : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_movies_details, container, false)
-
-
-
-    companion object {
-        private const val PARAM_ID = "fragment_MovieDetails"
-
-        fun newInstance(
-            id: String
-        ): FragmentMoviesDetails {
-            val fragment = FragmentMoviesDetails()
-            val args = Bundle()
-            args.putString(PARAM_ID, id)
-            fragment.arguments = args
-            return fragment
-        }
-    }
 }
