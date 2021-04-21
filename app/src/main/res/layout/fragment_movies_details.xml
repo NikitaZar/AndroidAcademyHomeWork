@@ -155,84 +155,15 @@
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/story" />
 
-        <ImageView
-            android:id="@+id/robert_downey_jr_pic"
-            android:layout_width="@dimen/actorsPicWidth"
-            android:layout_height="@dimen/actorsPicHeight"
-            android:layout_marginTop="@dimen/space4x"
-            android:src="@drawable/movie"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/casts" />
-
-        <ImageView
-            android:id="@+id/chris_evans_pic"
-            android:layout_width="@dimen/actorsPicWidth"
-            android:layout_height="@dimen/actorsPicHeight"
-            android:layout_marginTop="@dimen/space4x"
-            android:src="@drawable/movie1"
-            app:layout_constraintEnd_toStartOf="@id/mark_ruffalo_pic"
-            app:layout_constraintStart_toEndOf="@id/robert_downey_jr_pic"
-            app:layout_constraintTop_toBottomOf="@id/casts" />
-
-        <ImageView
-            android:id="@+id/mark_ruffalo_pic"
-            android:layout_width="@dimen/actorsPicWidth"
-            android:layout_height="@dimen/actorsPicHeight"
-            android:layout_marginTop="@dimen/space4x"
-            android:src="@drawable/movie2"
-            app:layout_constraintEnd_toStartOf="@id/chris_hemsworth_pic"
-            app:layout_constraintStart_toEndOf="@id/chris_evans_pic"
-            app:layout_constraintTop_toBottomOf="@id/casts" />
-
-        <ImageView
-            android:id="@+id/chris_hemsworth_pic"
-            android:layout_width="@dimen/actorsPicWidth"
-            android:layout_height="@dimen/actorsPicHeight"
-            android:layout_marginTop="@dimen/space4x"
-            android:src="@drawable/movie3"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/casts" />
-
-        <TextView
-            android:id="@+id/robert_downey_jr_text"
-            android:layout_width="@dimen/actorsTextWidth"
-            android:layout_height="@dimen/space8x"
-            android:lines="2"
-            android:text="@string/robert_downey_jr"
-            android:theme="@style/text_14sp_white_bold"
-            app:layout_constraintEnd_toEndOf="@id/robert_downey_jr_pic"
-            app:layout_constraintStart_toStartOf="@id/robert_downey_jr_pic"
-            app:layout_constraintTop_toBottomOf="@+id/robert_downey_jr_pic" />
-
-        <TextView
-            android:id="@+id/chris_evans_pic_text"
-            android:layout_width="@dimen/actorsTextWidth"
-            android:layout_height="@dimen/space8x"
-            android:text="@string/chris_evans_text"
-            android:theme="@style/text_14sp_white_bold"
-            app:layout_constraintEnd_toEndOf="@id/chris_evans_pic"
-            app:layout_constraintStart_toStartOf="@id/chris_evans_pic"
-            app:layout_constraintTop_toBottomOf="@+id/chris_evans_pic" />
-
-        <TextView
-            android:id="@+id/mark_ruffalo_text"
-            android:layout_width="@dimen/actorsTextWidth"
-            android:layout_height="@dimen/space8x"
-            android:text="@string/mark_ruffalo_text"
-            android:theme="@style/text_14sp_white_bold"
-            app:layout_constraintEnd_toEndOf="@id/mark_ruffalo_pic"
-            app:layout_constraintStart_toStartOf="@id/mark_ruffalo_pic"
-            app:layout_constraintTop_toBottomOf="@+id/mark_ruffalo_pic" />
-
-        <TextView
-            android:id="@+id/cris_hemsworth_text"
-            android:layout_width="@dimen/actorsTextWidth"
-            android:layout_height="@dimen/space8x"
-            android:text="@string/chris_hemsworth_text"
-            android:theme="@style/text_14sp_white_bold"
-            app:layout_constraintEnd_toEndOf="@id/chris_hemsworth_pic"
-            app:layout_constraintStart_toStartOf="@id/chris_hemsworth_pic"
-            app:layout_constraintTop_toBottomOf="@+id/chris_hemsworth_pic" />
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/casts"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:orientation="horizontal"
+          />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

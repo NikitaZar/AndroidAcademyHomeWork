@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movieCard"
+    android:padding="@dimen/space"
+    android:layout_width="@dimen/movieCardWidth"
+    android:layout_height="@dimen/movieCardHeight"
+    android:foregroundGravity="center"
+    app:cardBackgroundColor="@color/background">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/rounded_corner_border"
+        android:background="@color/background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_marginStart="@dimen/space"
+        android:layout_marginTop="@dimen/space"
+        android:layout_marginEnd="@dimen/space"
+        app:cardCornerRadius="@dimen/space1.5x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/movie_pic"
+                android:layout_width="@dimen/moviePosterWidth"
+                android:layout_height="@dimen/moviePosterHeight"
+                android:scaleType="centerCrop"
+                android:src="@drawable/movie_"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/mask"
+                android:layout_width="@dimen/moviePosterWidth"
+                android:layout_height="@dimen/moviePosterHeight"
+                android:src="@drawable/shape"
+                app:layout_constraintBottom_toBottomOf="@id/movie_pic"
+                app:layout_constraintEnd_toEndOf="@id/movie_pic"
+                app:layout_constraintStart_toStartOf="@id/movie_pic" />
+
+            <TextView
+                android:id="@+id/movie_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space5x"
+                android:layout_marginStart="@dimen/space2x"
+                android:layout_marginEnd="@dimen/space2x"
+                android:layout_marginBottom="@dimen/space5x"
+                android:text="@string/avengers_end_game_line"
+                android:theme="@style/text_14sp_white_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/movie_age"
+                android:layout_width="@dimen/space6x"
+                android:layout_height="@dimen/space6x"
+                android:layout_margin="@dimen/space1.5x"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/age_gray"
+                android:gravity="center"
+                android:text="@string/_13plus"
+                android:theme="@style/text_12sp_white_bold_centred"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/movie_dislike"
+                android:layout_width="@dimen/space4x"
+                android:layout_height="@dimen/space3.5x"
+                android:layout_marginTop="@dimen/space3.5x"
+                android:layout_marginEnd="@dimen/space2x"
+                android:src="@drawable/ic_like_off"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/movie_like"
+                android:layout_width="@dimen/space4x"
+                android:layout_height="@dimen/space3.5x"
+                android:layout_marginTop="@dimen/space3.5x"
+                android:layout_marginEnd="@dimen/space2x"
+                android:src="@drawable/ic_like_on"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="@dimen/space10x"
+                android:layout_height="@dimen/space2x"
+                android:layout_marginStart="@dimen/space2x"
+                android:layout_marginBottom="58dp"
+                android:rating="4"
+                android:theme="@style/RatingBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:mrb_fillBackgroundStars="true" />
+
+            <TextView
+                android:id="@+id/movie_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space1.5x"
+                android:layout_marginBottom="56dp"
+                android:text="@string/_125_reviews"
+                android:textAllCaps="true"
+                android:theme="@style/text_8sp_gray"
+                app:layout_constraintStart_toEndOf="@id/ratingBar"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/movie_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space2x"
+                android:layout_marginBottom="70dp"
+                android:text="@string/action_adventure_fantasy"
+                android:theme="@style/text_8sp_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space2x"
+                android:paddingBottom="@dimen/space2x"
+                android:text="@string/_137_min"
+                android:textAllCaps="true"
+                android:theme="@style/text_8sp_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

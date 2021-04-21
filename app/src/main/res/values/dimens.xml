@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="space0.5x">2dp</dimen>
+    <dimen name="space0.75x">3dp</dimen>
     <dimen name="space">4dp</dimen>
     <dimen name="space1.5x">6dp</dimen>
     <dimen name="space2x">8dp</dimen>
@@ -15,11 +16,10 @@
     <dimen name="space9.5x">38dp</dimen>
     <dimen name="space10x">40dp</dimen>
     <dimen name="space12x">48dp</dimen>
-    <dimen name="movieCardWidth">170dp</dimen>
-    <dimen name="movieCardHeight">296dp</dimen>
-    <dimen name="moviePosterWidth">166dp</dimen>
-    <dimen name="moviePosterHeight">246dp</dimen>
-    <dimen name="moviePosterMargin">1.5dp</dimen>
+    <dimen name="movieCardWidth">160dp</dimen>
+    <dimen name="movieCardHeight">280dp</dimen>
+    <dimen name="moviePosterWidth">150dp</dimen>
+    <dimen name="moviePosterHeight">240dp</dimen>
     <dimen name="moviePosterHeight_details">298dp</dimen>
     <dimen name="marginTop_BackButton">56dp</dimen>
     <dimen name="marginTop_age">226dp</dimen>
