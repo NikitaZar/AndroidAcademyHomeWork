@@ -23,27 +23,6 @@ class FragmentMoviesDetails : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView?.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView?.adapter = ActorListRecyclerAdapter(generateActors())
-    }
-
-    private fun generateActors(): List<ActorData> {
-        return listOf(
-            ActorData(
-                getString(R.string.robert_downey_jr),
-                R.drawable.movie
-            ),
-            ActorData(
-                getString(R.string.chris_evans_text),
-                R.drawable.movie1
-            ),
-            ActorData(
-                getString(R.string.mark_ruffalo_text),
-                R.drawable.movie2
-            ),
-            ActorData(
-                getString(R.string.chris_hemsworth_text),
-                R.drawable.movie3
-            )
-        )
+        recyclerView?.adapter = ActorListRecyclerAdapter(ListGenerator.generateActors())
     }
 }

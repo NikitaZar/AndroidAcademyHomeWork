@@ -1,6 +1,6 @@
 package com.example.movies
 
-data class ActorData (
-    var name: String,
-    var picSrc: Int
-        )
+data class ActorData(
+    val name: Int,
+    val picSrc: Int
+)

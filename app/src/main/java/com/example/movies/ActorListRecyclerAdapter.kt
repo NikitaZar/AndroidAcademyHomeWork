@@ -10,13 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 class ActorListRecyclerAdapter(private val actors: List<ActorData>) :
     RecyclerView.Adapter<ActorListRecyclerAdapter.ActorListViewHolder>() {
     class ActorListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var actorName: TextView? = null
-        var actorPic: ImageView? = null
-
-        init {
-            actorName = itemView.findViewById(R.id.actor_name)
-            actorPic = itemView.findViewById(R.id.actor_pic)
-        }
+        val actorName: TextView? = itemView.findViewById(R.id.actor_name)
+        val actorPic: ImageView? = itemView.findViewById(R.id.actor_pic)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActorListViewHolder {
@@ -29,7 +24,7 @@ class ActorListRecyclerAdapter(private val actors: List<ActorData>) :
     override fun getItemCount(): Int = actors.size
 
     override fun onBindViewHolder(holder: ActorListViewHolder, position: Int) {
-        holder.actorName?.text = actors[position].name
+        holder.actorName?.setText(actors[position].name)
         holder.actorPic?.setImageResource(actors[position].picSrc)
     }
 }

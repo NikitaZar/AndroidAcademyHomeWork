@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class FragmentMoviesList : Fragment() {
-    private var recyclerView: RecyclerView? = null
-    private lateinit var movieView1: View
+    private lateinit var recyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,59 +22,12 @@ class FragmentMoviesList : Fragment() {
         fun doClick() {
             (activity as MainActivity).showFirstMovie()
         }
+
         val listener: () -> Unit = { doClick() }
 
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView?.layoutManager = GridLayoutManager(context,2)
-        recyclerView?.adapter = MovieListRecyclerAdapter(listener, generateMovies())
-    }
-
-    private fun generateMovies(): List<MovieData> {
-        return listOf(
-            MovieData(
-                getString(R.string.avengers_end_game_line),
-                R.drawable.movie_,
-                13,
-                false,
-                4.0F,
-                228,
-                getString(R.string.action_adventure_fantasy),
-                137
-            ),
-
-            MovieData(
-                getString(R.string.tenet),
-                R.drawable.movie_2,
-                16,
-                true,
-                5.0F,
-                98,
-                getString(R.string.action_sci_fi_thriller),
-                97
-            ),
-
-            MovieData(
-                getString(R.string.black_window),
-                R.drawable.movie_3,
-                13,
-                false,
-                4.0F,
-                228,
-                getString(R.string.action_adventure_sci_fi),
-                102
-            ),
-
-            MovieData(
-                getString(R.string.wonder_woman_1984),
-                R.drawable.movie_4,
-                13,
-                false,
-                5.0F,
-                74,
-                getString(R.string.action_adventure_fantasy),
-                120
-            )
-        )
+        recyclerView?.layoutManager = GridLayoutManager(context, 2)
+        recyclerView?.adapter = MovieListRecyclerAdapter(listener, ListGenerator.generateMovies())
     }
 }
 
