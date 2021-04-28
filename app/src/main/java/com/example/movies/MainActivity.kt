@@ -1,15 +1,9 @@
 package com.example.movies
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import me.zhanghai.android.materialratingbar.MaterialRatingBar
+import com.example.movies.screens.moviesdetails.MoviesDetailsFragment
+import com.example.movies.screens.movieslist.MoviesListFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,14 +14,14 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragments_container, FragmentMoviesList())
+                .add(R.id.fragments_container, MoviesListFragment())
                 .commit()
         }
     }
 
     fun showFirstMovie() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, FragmentMoviesDetails())
+            .add(R.id.fragments_container, MoviesDetailsFragment())
             .addToBackStack(null)
             .commit()
     }
