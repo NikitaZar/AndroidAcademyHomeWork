@@ -1,10 +1,9 @@
 package com.example.movies
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import com.example.movies.screens.moviesdetails.MoviesDetailsFragment
+import com.example.movies.screens.movieslist.MoviesListFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,19 +14,24 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragments_container, FragmentMoviesList())
-                .addToBackStack(null)
+                .add(R.id.fragments_container, MoviesListFragment())
                 .commit()
         }
     }
 
     fun showFirstMovie() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, FragmentMoviesDetails())
+            .add(R.id.fragments_container, MoviesDetailsFragment())
             .addToBackStack(null)
             .commit()
     }
 }
+
+
+
+
+
+
 
 
 
