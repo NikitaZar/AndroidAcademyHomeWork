@@ -7,60 +7,49 @@
     android:background="@color/background"
     android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_"
         android:layout_width="match_parent"
         android:layout_height="@dimen/space10x"
-        android:layout_marginTop="@dimen/space10x">
+        android:layout_marginTop="@dimen/space10x"
+        android:background="@color/background">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/toolbar_"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@color/background">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/space10x"
-                android:background="@color/background">
+            <ImageView
+                android:id="@+id/sniper_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sniper_target"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/sniper_target"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_sniper_target"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/movies_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space2x"
+                android:text="@string/movies_list"
+                android:textColor="@color/white"
+                android:theme="@style/text_14sp_white_bold"
+                app:layout_constraintStart_toEndOf="@+id/sniper_target"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/movies_list"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/space2x"
-                    android:text="@string/movies_list"
-                    android:textColor="@color/white"
-                    android:theme="@style/text_14sp_white_bold"
-                    app:layout_constraintStart_toEndOf="@+id/sniper_target"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.AppBarLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:layout_marginLeft="@dimen/space4x"
         android:layout_marginRight="@dimen/space4x"
         android:layout_marginBottom="@dimen/space4x"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        />
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
 
 </LinearLayout>
