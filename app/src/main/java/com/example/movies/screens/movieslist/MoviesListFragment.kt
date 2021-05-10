@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.MainActivity
 import com.example.movies.repositories.MockMovieRepository
 import com.example.movies.R
+import com.example.movies.api.JsonParser
 
 class MoviesListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -29,7 +30,8 @@ class MoviesListFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter =
-            MovieListRecyclerAdapter(MockMovieRepository.generateMovies(), itemClickListener = { onMovieClick() })
+            context?.let { JsonParser(it).moviesData }
+                ?.let { MovieListRecyclerAdapter(it, itemClickListener = { onMovieClick() }) }
     }
 }
 

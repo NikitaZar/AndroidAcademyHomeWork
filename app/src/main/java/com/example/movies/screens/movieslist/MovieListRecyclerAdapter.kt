@@ -12,9 +12,10 @@ import com.example.movies.R
 import me.zhanghai.android.materialratingbar.MaterialRatingBar
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movies.data.JsonMovieData
 
 internal class MovieListRecyclerAdapter(
-    private val movies: List<MovieData>,
+    private val movies: List<JsonMovieData>,
     private val itemClickListener: () -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
 
@@ -48,24 +49,20 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val duration: TextView = itemView.findViewById(R.id.duration)
     val res: Resources = itemView.resources
 
-    fun bind(movie: MovieData) {
-        movieName.setText(movie.name)
-        moviePic.setImageResource(movie.picSrc)
-        movieAge.setText("${movie.age}+")
+    fun bind(movie: JsonMovieData) {
+        movieName.setText(movie.title)
+        //moviePic.setImageResource(movie.picSrc)
+        //movieAge.setText("${movie.age}+")
 
+        /*
         if (movie.hasLike)
             movieLike.visibility = View.VISIBLE
         else movieLike.visibility = View.INVISIBLE
+        */
 
-        ratingBar.rating = movie.rating
-        movieReviews.setText(
-            res.getQuantityString(
-                R.plurals.review,
-                movie.reviewsCnt,
-                movie.reviewsCnt
-            )
-        )
-        movieGenre.setText(movie.genre)
-        duration.setText("${movie.duration} min")
+        ratingBar.rating = movie.vote_average / 2
+        movieReviews.setText(movie.vote_count.toString())
+        movieGenre.setText(movie.genre_ids.toString()) //TODO
+        duration.setText("${movie.runtime} min")
     }
 }
