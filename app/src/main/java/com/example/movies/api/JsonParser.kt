@@ -14,8 +14,8 @@ class JsonParser(context: Context) {
     lateinit var jsonString: String
 
     var moviesData = Json.decodeFromString<List<JsonMovieData>>(jsonToString(context, "data.json"))
-    var genresData = Json.decodeFromString<List<JsonGenresData>>(jsonToString(context, "genres.json"))
-    var actorsData = Json.decodeFromString<List<JsonActorData>>(jsonToString(context, "people.json"))
+    var genresData = Json.decodeFromString<Array<JsonGenresData>>(jsonToString(context, "genres.json"))
+    var actorsData = Json.decodeFromString<Array<JsonActorData>>(jsonToString(context, "people.json"))
 
     private fun jsonToString(context: Context, fileName: String): String {
         var jsonToString: String = ""

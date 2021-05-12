@@ -1,6 +1,7 @@
 package com.example.movies.screens.movieslist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.example.movies.MainActivity
 import com.example.movies.repositories.MockMovieRepository
 import com.example.movies.R
 import com.example.movies.api.JsonParser
+import com.example.movies.data.GenresData
 
 class MoviesListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -26,12 +28,22 @@ class MoviesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val context = requireContext()
+        val moviesList = JsonParser(context).moviesData
+        val genresData = GenresData()
+
+        //TODO: transfer to other thread
+        val genresList = JsonParser(context).genresData
+        genresData.initGenres(genresList)
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter =
-            context?.let { JsonParser(it).moviesData }
-                ?.let { MovieListRecyclerAdapter(it, itemClickListener = { onMovieClick() }) }
+            MovieListRecyclerAdapter(
+                moviesList,
+                genresData,
+                context,
+                itemClickListener = { onMovieClick() })
     }
 }
 

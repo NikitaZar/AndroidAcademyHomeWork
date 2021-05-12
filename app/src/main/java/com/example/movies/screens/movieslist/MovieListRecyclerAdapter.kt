@@ -7,15 +7,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.data.MovieData
 import com.example.movies.R
 import me.zhanghai.android.materialratingbar.MaterialRatingBar
 import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
+import android.util.Log
+import com.bumptech.glide.Glide
+import com.example.movies.api.JsonParser
+import com.example.movies.data.GenresData
 import com.example.movies.data.JsonMovieData
 
 internal class MovieListRecyclerAdapter(
     private val movies: List<JsonMovieData>,
+    private val genresData: GenresData,
+    private val context: Context,
     private val itemClickListener: () -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
 
@@ -34,7 +39,7 @@ internal class MovieListRecyclerAdapter(
             itemClickListener()
         }
 
-        holder.bind(movies[position])
+        holder.bind(movies[position], context, genresData)
     }
 }
 
@@ -49,9 +54,15 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val duration: TextView = itemView.findViewById(R.id.duration)
     val res: Resources = itemView.resources
 
-    fun bind(movie: JsonMovieData) {
+    fun bind(movie: JsonMovieData, context: Context, genresData: GenresData) {
         movieName.setText(movie.title)
-        //moviePic.setImageResource(movie.picSrc)
+
+        val uri = Uri.parse(movie.poster_path)
+        Glide
+            .with(context)
+            .load(uri)
+            .into(moviePic);
+
         //movieAge.setText("${movie.age}+")
 
         /*
@@ -61,8 +72,17 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         */
 
         ratingBar.rating = movie.vote_average / 2
-        movieReviews.setText(movie.vote_count.toString())
-        movieGenre.setText(movie.genre_ids.toString()) //TODO
+
+        movieReviews.setText(
+            context.resources.getQuantityString(
+                R.plurals.review,
+                movie.vote_count,
+                movie.vote_count
+            )
+        )
+
+        movieGenre.setText(genresData.getGenres(movie.genre_ids))
+
         duration.setText("${movie.runtime} min")
     }
 }
