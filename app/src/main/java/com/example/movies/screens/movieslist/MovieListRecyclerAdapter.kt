@@ -11,9 +11,7 @@ import com.example.movies.R
 import me.zhanghai.android.materialratingbar.MaterialRatingBar
 import android.content.res.Resources
 import android.net.Uri
-import android.util.Log
 import com.bumptech.glide.Glide
-import com.example.movies.api.JsonParser
 import com.example.movies.data.GenresData
 import com.example.movies.data.JsonMovieData
 
@@ -21,7 +19,7 @@ internal class MovieListRecyclerAdapter(
     private val movies: List<JsonMovieData>,
     private val genresData: GenresData,
     private val context: Context,
-    private val itemClickListener: () -> Unit
+    private val itemClickListener: (id: Long) -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
@@ -36,7 +34,7 @@ internal class MovieListRecyclerAdapter(
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
 
         holder.itemView.setOnClickListener {
-            itemClickListener()
+            itemClickListener(movies[position].id)
         }
 
         holder.bind(movies[position], context, genresData)
@@ -48,7 +46,7 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val moviePic: ImageView = itemView.findViewById(R.id.movie_pic)
     private val movieAge: TextView = itemView.findViewById(R.id.movie_age)
     private val movieLike: ImageView = itemView.findViewById(R.id.movie_like)
-    private val ratingBar: MaterialRatingBar = itemView.findViewById(R.id.ratingBar)
+    private val ratingBar: MaterialRatingBar = itemView.findViewById(R.id.ratingBar_details)
     private val movieReviews: TextView = itemView.findViewById(R.id.movie_reviews)
     private val movieGenre: TextView = itemView.findViewById(R.id.movie_genre)
     private val duration: TextView = itemView.findViewById(R.id.duration)

@@ -30,25 +30,26 @@
             app:layout_constraintGuide_end="@dimen/space4x" />
 
         <ImageView
-            android:id="@+id/origin_pic"
+            android:id="@+id/movie_pic_details"
             android:layout_width="match_parent"
             android:layout_height="@dimen/moviePosterHeight_details"
             android:scaleType="centerCrop"
-            android:src="@drawable/orig"
+            android:src="@drawable/movie_"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/mask"
+            android:id="@+id/mask_details"
             android:layout_width="match_parent"
             android:layout_height="@dimen/moviePosterHeight_details"
             android:src="@drawable/shape"
-            app:layout_constraintBottom_toBottomOf="@id/origin_pic"
-            app:layout_constraintEnd_toEndOf="@id/origin_pic"
+            app:layout_constraintBottom_toBottomOf="@id/movie_pic_details"
+            app:layout_constraintEnd_toEndOf="@id/movie_pic_details"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toTopOf="@id/origin_pic" />
+            app:layout_constraintTop_toTopOf="@id/movie_pic_details"
+            android:visibility="visible"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -59,8 +60,8 @@
 
         <TextView
             android:id="@+id/activity_movie_details_back_button"
-            android:layout_width="42dp"
-            android:layout_height="16dp"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
             android:layout_marginStart="@dimen/space0.5x"
             android:layout_marginTop="@dimen/marginTop_BackButton"
             android:text="@string/back"
@@ -69,7 +70,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/_13plus"
+            android:id="@+id/movie_age_details"
             android:layout_width="@dimen/space6x"
             android:layout_height="@dimen/space4x"
             android:layout_marginStart="@dimen/space4x"
@@ -80,7 +81,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/avengers_end_game_text"
+            android:id="@+id/movie_name_details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginTop_header"
@@ -92,7 +93,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/action_adventure_fantasy"
+            android:id="@+id/movie_genre_details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/action_adventure_fantasy"
@@ -102,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@id/guideline1" />
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/ratingBar_details"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,10 +111,10 @@
             android:theme="@style/RatingBar"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toTopOf="@id/_125_reviews" />
+            app:layout_constraintTop_toTopOf="@id/movie_reviews_details" />
 
         <TextView
-            android:id="@+id/_125_reviews"
+            android:id="@+id/movie_reviews_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/space4x"
@@ -121,7 +122,7 @@
             android:text="@string/_125_reviews"
             android:theme="@style/text_14sp_gray_bold_uppercase"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
-            app:layout_constraintStart_toEndOf="@+id/ratingBar" />
+            app:layout_constraintStart_toEndOf="@+id/ratingBar_details" />
 
         <TextView
             android:id="@+id/storyline"
@@ -132,10 +133,10 @@
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/action_adventure_fantasy" />
+            app:layout_constraintTop_toBottomOf="@id/movie_genre_details" />
 
         <TextView
-            android:id="@+id/story"
+            android:id="@+id/overview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/space"
@@ -153,10 +154,10 @@
             android:text="@string/Cast"
             android:theme="@style/text_14sp_white_bold"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/story" />
+            app:layout_constraintTop_toBottomOf="@id/overview" />
 
       <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recyclerView"
+          android:id="@+id/recyclerView_details"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           app:layout_constraintTop_toBottomOf="@id/casts"

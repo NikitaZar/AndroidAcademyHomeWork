@@ -1,12 +1,17 @@
 package com.example.movies
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movies.data.GenresData
+import com.example.movies.data.JsonMovieData
 import com.example.movies.screens.moviesdetails.MoviesDetailsFragment
 import com.example.movies.screens.movieslist.MoviesListFragment
 
 
 class MainActivity : AppCompatActivity() {
+
+    //TODO: Coroutines
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +24,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showFirstMovie() {
+    fun showMovie(movieData: JsonMovieData, context: Context) {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, MoviesDetailsFragment())
+            .add(R.id.fragments_container, MoviesDetailsFragment(movieData, GenresData(context), backListener = {goBack()}))
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun goBack() {
+        supportFragmentManager.popBackStack()
     }
 }
 

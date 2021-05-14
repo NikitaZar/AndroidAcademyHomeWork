@@ -1,10 +1,13 @@
 package com.example.movies.data
 
-class GenresData() {
+import android.content.Context
+import com.example.movies.api.JsonParser
+
+class GenresData(context: Context) {
     var genres: HashMap<Int, String> = hashMapOf()
 
-    fun initGenres(jsonGenresData: Array<JsonGenresData>) {
-        jsonGenresData.forEach { genres[it.id] = it.name }
+    init {
+        JsonParser(context).genresData.forEach { genres[it.id] = it.name }
     }
 
     fun getGenres(genresIds: List<Int>): String {
