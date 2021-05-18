@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showMovie(movieData: JsonMovieData, context: Context) {
+    fun showMovie(movie: JsonMovieData, context: Context) {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, MoviesDetailsFragment(movieData, GenresData(context), backListener = {goBack()}))
+            .add(R.id.fragments_container, MoviesDetailsFragment(movie, GenresData(context), backListener = {goBack()}))
             .addToBackStack(null)
             .commit()
     }

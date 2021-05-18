@@ -45,11 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/moviePosterHeight_details"
             android:src="@drawable/shape"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@id/movie_pic_details"
             app:layout_constraintEnd_toEndOf="@id/movie_pic_details"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toTopOf="@id/movie_pic_details"
-            android:visibility="visible"/>
+            app:layout_constraintTop_toTopOf="@id/movie_pic_details" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -73,24 +73,22 @@
             android:id="@+id/movie_age_details"
             android:layout_width="@dimen/space6x"
             android:layout_height="@dimen/space4x"
-            android:layout_marginStart="@dimen/space4x"
-            android:layout_marginTop="@dimen/marginTop_age"
+            android:layout_marginBottom="@dimen/space3x"
             android:text="@string/_13plus"
             android:theme="@style/text_12sp_white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/movie_name_details"
+            app:layout_constraintStart_toStartOf="@id/guideline_left" />
 
         <TextView
             android:id="@+id/movie_name_details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginTop_header"
-            android:lines="2"
             android:text="@string/avengers_end_game"
             android:theme="@style/text_header"
+            app:layout_constraintBottom_toTopOf="@id/movie_reviews_details"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/guideline_left" />
 
         <TextView
             android:id="@+id/movie_genre_details"
@@ -156,15 +154,14 @@
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/overview" />
 
-      <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recyclerView_details"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:layout_constraintTop_toBottomOf="@id/casts"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          android:orientation="horizontal"
-          />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_actors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/casts" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

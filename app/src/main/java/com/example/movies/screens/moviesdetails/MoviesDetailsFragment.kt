@@ -3,6 +3,7 @@ package com.example.movies.screens.moviesdetails
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,8 @@ class MoviesDetailsFragment(
     private lateinit var movieGenre: TextView
     private lateinit var moviePic: ImageView
     private lateinit var backBt: TextView
+    private lateinit var overview: TextView
+    private lateinit var casts: TextView
     private val backListener = backListener
 
     private val movieData = movieData
@@ -49,10 +52,13 @@ class MoviesDetailsFragment(
 
         val context = requireContext()
 
-        recyclerView = view.findViewById(R.id.recyclerView_details)
+        recyclerView = view.findViewById(R.id.recyclerView_actors)
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.adapter = ActorListRecyclerAdapter(JsonParser(context).actorsData, context)
+
+        val movieActrorList =
+            JsonParser(context).actorsData.filter { movieData.actors.contains(it.id) }
+        recyclerView.adapter = ActorListRecyclerAdapter(movieActrorList, context)
 
         movieName = view.findViewById(R.id.movie_name_details)
         movieName.text = movieData.title
@@ -61,7 +67,8 @@ class MoviesDetailsFragment(
         //movieAge.text = movieData.age
 
         ratingBar = view.findViewById(R.id.ratingBar_details)
-        ratingBar.rating - movieData.vote_average / 2
+        ratingBar.rating = movieData.vote_average / 2
+
 
         movieReviews = view.findViewById(R.id.movie_reviews_details)
         movieReviews.setText(
@@ -81,6 +88,17 @@ class MoviesDetailsFragment(
             .with(context)
             .load(uri)
             .into(moviePic);
+
+        overview = view.findViewById(R.id.overview)
+        overview.setText(movieData.overview)
+
+        casts = view.findViewById(R.id.casts)
+
+        if (movieData.actors.size > 0) {
+            casts.visibility = View.VISIBLE
+        }else{
+            casts.visibility = View.INVISIBLE
+        }
 
         backBt = view.findViewById(R.id.activity_movie_details_back_button)
         backBt.setOnClickListener { backListener() }

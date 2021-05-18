@@ -19,7 +19,7 @@ internal class MovieListRecyclerAdapter(
     private val movies: List<JsonMovieData>,
     private val genresData: GenresData,
     private val context: Context,
-    private val itemClickListener: (id: Long) -> Unit
+    private val itemClickListener: (JsonMovieData) -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
@@ -34,7 +34,7 @@ internal class MovieListRecyclerAdapter(
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
 
         holder.itemView.setOnClickListener {
-            itemClickListener(movies[position].id)
+            itemClickListener(movies[position])
         }
 
         holder.bind(movies[position], context, genresData)

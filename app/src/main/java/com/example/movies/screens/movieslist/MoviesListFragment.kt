@@ -13,6 +13,7 @@ import com.example.movies.MainActivity
 import com.example.movies.R
 import com.example.movies.api.JsonParser
 import com.example.movies.data.GenresData
+import com.example.movies.data.JsonMovieData
 import com.example.movies.data.getMovie
 
 class MoviesListFragment : Fragment() {
@@ -23,12 +24,9 @@ class MoviesListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_movies_list, container, false)
 
-    private var id = 0L
-
-    private fun onMovieClick(context: Context, id: Long) {
-        Log.e("id", id.toString())
-        val movieData = getMovie.getMovieById(context, 671039) //TODO
-        (activity as MainActivity).showMovie(movieData, context)
+    private fun onMovieClick(movie: JsonMovieData) {
+        Log.i("id", movie.id.toString())
+        (activity as MainActivity).showMovie(movie, requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,7 +41,7 @@ class MoviesListFragment : Fragment() {
                 moviesList,
                 GenresData(context),
                 context,
-                itemClickListener = { onMovieClick(context, id) })
+                itemClickListener = { onMovieClick(it) })
     }
 }
 
