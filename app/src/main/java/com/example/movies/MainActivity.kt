@@ -1,17 +1,16 @@
 package com.example.movies
 
+import MoviesDetailsFragment
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.data.GenresData
 import com.example.movies.data.JsonMovieData
-import com.example.movies.screens.moviesdetails.MoviesDetailsFragment
+import com.example.movies.data.MovieData
+
 import com.example.movies.screens.movieslist.MoviesListFragment
 
 
 class MainActivity : AppCompatActivity() {
-
-    //TODO: Coroutines
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +23,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showMovie(movie: JsonMovieData, context: Context) {
+    fun showMovie(movie: MovieData, context: Context) {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, MoviesDetailsFragment(movie, GenresData(context), backListener = {goBack()}))
+            .add(
+                R.id.fragments_container,
+                MoviesDetailsFragment(movie,
+                    backListener = { goBack() })
+            )
             .addToBackStack(null)
             .commit()
     }

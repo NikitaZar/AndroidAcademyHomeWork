@@ -1,9 +1,7 @@
-package com.example.movies.screens.moviesdetails
+import com.example.movies.screens.moviesdetails.ActorListRecyclerAdapter
 
-import android.content.Context
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,15 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.movies.repositories.MockMovieRepository
 import com.example.movies.R
-import com.example.movies.api.JsonParser
-import com.example.movies.data.GenresData
-import com.example.movies.data.JsonMovieData
+import com.example.movies.data.MovieData
 
 class MoviesDetailsFragment(
-    movieData: JsonMovieData,
-    genresData: GenresData,
+    movieData: MovieData,
     backListener: () -> Unit
 ) : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -38,8 +32,6 @@ class MoviesDetailsFragment(
     private val backListener = backListener
 
     private val movieData = movieData
-    private val genresData = genresData
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,34 +48,30 @@ class MoviesDetailsFragment(
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        val movieActrorList =
-            JsonParser(context).actorsData.filter { movieData.actors.contains(it.id) }
-        recyclerView.adapter = ActorListRecyclerAdapter(movieActrorList, context)
+        recyclerView.adapter = ActorListRecyclerAdapter(movieData.actors, context)
 
         movieName = view.findViewById(R.id.movie_name_details)
-        movieName.text = movieData.title
+        movieName.text = movieData.name
 
-        //movieAge = view.findViewById(R.id.movie_age_details)
-        //movieAge.text = movieData.age
+        movieAge = view.findViewById(R.id.movie_age_details)
+        movieAge.text = "${movieData.age}+"
 
         ratingBar = view.findViewById(R.id.ratingBar_details)
-        ratingBar.rating = movieData.vote_average / 2
+        ratingBar.rating = movieData.rating
 
 
         movieReviews = view.findViewById(R.id.movie_reviews_details)
-        movieReviews.setText(
-            context.resources.getQuantityString(
-                R.plurals.review,
-                movieData.vote_count,
-                movieData.vote_count
-            )
+        movieReviews.text = context.resources.getQuantityString(
+            R.plurals.review,
+            movieData.reviews,
+            movieData.reviews
         )
 
         movieGenre = view.findViewById(R.id.movie_genre_details)
-        movieGenre.setText(genresData.getGenres(movieData.genre_ids))
+        movieGenre.text = movieData.genres.toString()
 
         moviePic = view.findViewById(R.id.movie_pic_details)
-        val uri = Uri.parse(movieData.backdrop_path)
+        val uri = Uri.parse(movieData.backdropPic)
         Glide
             .with(context)
             .load(uri)

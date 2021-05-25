@@ -12,15 +12,14 @@ import me.zhanghai.android.materialratingbar.MaterialRatingBar
 import android.content.res.Resources
 import android.net.Uri
 import com.bumptech.glide.Glide
-import com.example.movies.data.GenresData
-import com.example.movies.data.JsonMovieData
+import com.example.movies.data.MovieData
 
 internal class MovieListRecyclerAdapter(
-    private val movies: List<JsonMovieData>,
-    private val genresData: GenresData,
     private val context: Context,
-    private val itemClickListener: (JsonMovieData) -> Unit
+    private val itemClickListener: (MovieData) -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
+
+    private var movies = emptyList<MovieData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
         val itemView =
@@ -29,7 +28,9 @@ internal class MovieListRecyclerAdapter(
         return MovieListViewHolder(itemView)
     }
 
-    override fun getItemCount() = movies.size
+    override fun getItemCount() : Int{
+        return movies.size
+    }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
 
@@ -37,8 +38,13 @@ internal class MovieListRecyclerAdapter(
             itemClickListener(movies[position])
         }
 
-        holder.bind(movies[position], context, genresData)
+        holder.bind(movies[position], context)
     }
+
+    fun setMovie(movies: List<MovieData>){
+        this.movies = movies
+    }
+
 }
 
 class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -52,35 +58,33 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val duration: TextView = itemView.findViewById(R.id.duration)
     val res: Resources = itemView.resources
 
-    fun bind(movie: JsonMovieData, context: Context, genresData: GenresData) {
-        movieName.setText(movie.title)
+    fun bind(movie: MovieData, context: Context) {
+        movieName.text = movie.name
 
-        val uri = Uri.parse(movie.poster_path)
+        val uri = Uri.parse(movie.posterPic)
         Glide
             .with(context)
             .load(uri)
             .into(moviePic);
 
-        //movieAge.setText("${movie.age}+")
+        movieAge.text = "${movie.age}+"
 
-        /*
+
         if (movie.hasLike)
             movieLike.visibility = View.VISIBLE
         else movieLike.visibility = View.INVISIBLE
-        */
 
-        ratingBar.rating = movie.vote_average / 2
 
-        movieReviews.setText(
-            context.resources.getQuantityString(
-                R.plurals.review,
-                movie.vote_count,
-                movie.vote_count
-            )
+        ratingBar.rating = movie.rating
+
+        movieReviews.text = context.resources.getQuantityString(
+            R.plurals.review,
+            movie.reviews,
+            movie.reviews
         )
 
-        movieGenre.setText(genresData.getGenres(movie.genre_ids))
+        movieGenre.text = movie.genres.toString()
 
-        duration.setText("${movie.runtime} min")
+        duration.text = "${movie.duration} min"
     }
 }

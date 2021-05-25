@@ -10,9 +10,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movies.R
-import com.example.movies.data.JsonActorData
+import com.example.movies.data.ActorData
 
-internal class ActorListRecyclerAdapter(private val actors: List<JsonActorData>, context: Context) :
+internal class ActorListRecyclerAdapter(private val actors: List<ActorData>, context: Context) :
     RecyclerView.Adapter<ActorListViewHolder>() {
     val context = context
 
@@ -34,8 +34,8 @@ class ActorListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val actorName: TextView = itemView.findViewById(R.id.actor_name)
     private val actorPic: ImageView = itemView.findViewById(R.id.actor_pic)
 
-    fun bind(actor: JsonActorData, context: Context) {
-        actorName.setText(actor.name)
+    fun bind(actor: ActorData, context: Context) {
+        actorName.text = actor.name
 
         val uri = Uri.parse(actor.profile_path)
         Glide
