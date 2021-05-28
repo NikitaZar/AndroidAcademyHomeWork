@@ -44,13 +44,14 @@
             android:id="@+id/mask"
             android:layout_width="@dimen/moviePosterWidth"
             android:layout_height="@dimen/moviePosterHeight"
-            android:src="@drawable/shape" />
+            android:src="@drawable/shape"
+            android:visibility="visible"/>
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
     <TextView
         android:id="@+id/movie_name"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space5x"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space2x"
         android:layout_marginEnd="@dimen/space2x"
         android:layout_marginBottom="@dimen/space5x"
@@ -93,14 +94,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <me.zhanghai.android.materialratingbar.MaterialRatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBar_details"
         android:layout_width="@dimen/space10x"
         android:layout_height="@dimen/space2x"
         android:layout_marginStart="@dimen/space2x"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="@dimen/space4.5x"
         android:rating="4"
         android:theme="@style/RatingBar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/movie_name"
         app:layout_constraintStart_toStartOf="parent"
         app:mrb_fillBackgroundStars="true" />
 
@@ -109,22 +110,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space1.5x"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="@dimen/space4x"
         android:text="@string/_125_reviews"
         android:textAllCaps="true"
         android:theme="@style/text_8sp_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ratingBar" />
+        app:layout_constraintBottom_toTopOf="@id/movie_name"
+        app:layout_constraintStart_toEndOf="@id/ratingBar_details" />
 
     <TextView
         android:id="@+id/movie_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space2x"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/action_adventure_fantasy"
         android:theme="@style/text_8sp_red"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/movie_name"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

@@ -1,8 +1,12 @@
 package com.example.movies
 
+import MoviesDetailsFragment
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.screens.moviesdetails.MoviesDetailsFragment
+import com.example.movies.data.JsonMovieData
+import com.example.movies.data.MovieData
+
 import com.example.movies.screens.movieslist.MoviesListFragment
 
 
@@ -19,11 +23,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showFirstMovie() {
+    fun showMovie(movie: MovieData, context: Context) {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragments_container, MoviesDetailsFragment())
+            .add(
+                R.id.fragments_container,
+                MoviesDetailsFragment(movie,
+                    backListener = { goBack() })
+            )
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun goBack() {
+        supportFragmentManager.popBackStack()
     }
 }
 

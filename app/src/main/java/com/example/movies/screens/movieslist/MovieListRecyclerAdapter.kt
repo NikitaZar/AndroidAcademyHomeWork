@@ -7,16 +7,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.data.MovieData
 import com.example.movies.R
 import me.zhanghai.android.materialratingbar.MaterialRatingBar
 import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
+import com.bumptech.glide.Glide
+import com.example.movies.data.MovieData
 
 internal class MovieListRecyclerAdapter(
-    private val movies: List<MovieData>,
-    private val itemClickListener: () -> Unit
+    private val context: Context,
+    private val itemClickListener: (MovieData) -> Unit
 ) : RecyclerView.Adapter<MovieListViewHolder>() {
+
+    private var movies = emptyList<MovieData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
         val itemView =
@@ -25,16 +28,23 @@ internal class MovieListRecyclerAdapter(
         return MovieListViewHolder(itemView)
     }
 
-    override fun getItemCount() = movies.size
+    override fun getItemCount() : Int{
+        return movies.size
+    }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
 
         holder.itemView.setOnClickListener {
-            itemClickListener()
+            itemClickListener(movies[position])
         }
 
-        holder.bind(movies[position])
+        holder.bind(movies[position], context)
     }
+
+    fun setMovie(movies: List<MovieData>){
+        this.movies = movies
+    }
+
 }
 
 class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,30 +52,39 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val moviePic: ImageView = itemView.findViewById(R.id.movie_pic)
     private val movieAge: TextView = itemView.findViewById(R.id.movie_age)
     private val movieLike: ImageView = itemView.findViewById(R.id.movie_like)
-    private val ratingBar: MaterialRatingBar = itemView.findViewById(R.id.ratingBar)
+    private val ratingBar: MaterialRatingBar = itemView.findViewById(R.id.ratingBar_details)
     private val movieReviews: TextView = itemView.findViewById(R.id.movie_reviews)
     private val movieGenre: TextView = itemView.findViewById(R.id.movie_genre)
     private val duration: TextView = itemView.findViewById(R.id.duration)
     val res: Resources = itemView.resources
 
-    fun bind(movie: MovieData) {
-        movieName.setText(movie.name)
-        moviePic.setImageResource(movie.picSrc)
-        movieAge.setText("${movie.age}+")
+    fun bind(movie: MovieData, context: Context) {
+        movieName.text = movie.name
+
+        val uri = Uri.parse(movie.posterPic)
+        Glide
+            .with(context)
+            .load(uri)
+            .into(moviePic);
+
+        movieAge.text = "${movie.age}+"
+
 
         if (movie.hasLike)
             movieLike.visibility = View.VISIBLE
         else movieLike.visibility = View.INVISIBLE
 
+
         ratingBar.rating = movie.rating
-        movieReviews.setText(
-            res.getQuantityString(
-                R.plurals.review,
-                movie.reviewsCnt,
-                movie.reviewsCnt
-            )
+
+        movieReviews.text = context.resources.getQuantityString(
+            R.plurals.review,
+            movie.reviews,
+            movie.reviews
         )
-        movieGenre.setText(movie.genre)
-        duration.setText("${movie.duration} min")
+
+        movieGenre.text = movie.genres.toString()
+
+        duration.text = "${movie.duration} min"
     }
 }
